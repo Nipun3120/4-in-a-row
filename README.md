@@ -18,7 +18,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone [<repository-url>](https://github.com/Nipun3120/4-in-a-row.git)
    cd game
    ```
 
