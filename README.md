@@ -6,7 +6,6 @@
 - Two players: Red and Blue
 - Win detection for horizontal and vertical connections
 - Draw detection when the board is full
-- Clean, responsive UI
 
 ## Prerequisites
 
