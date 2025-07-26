@@ -12,10 +12,10 @@ export const Grid = ({ board }: GridProps) => {
         row.map((cell, colIndex) => (
           <div
             key={`${rowIndex}-${colIndex}`}
-            className="aspect-square w-full rounded-md md:rounded-lg bg-white border border-gray-300 flex items-center justify-center p-1 md:p-2">
+            className={`aspect-square w-full h-full rounded-xl md:rounded-lg bg-white border border-gray-300 flex items-center justify-center`}>
             {cell && (
               <div
-                className={`w-full h-full rounded-md md:rounded-lg ${
+                className={`w-full h-full rounded-xl md:rounded-lg ${
                   cell === PlayerColor.RED ? "bg-red-600" : "bg-blue-600"
                 }`}
               />
