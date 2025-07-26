@@ -1,4 +1,5 @@
 import { COLS, ROWS, type GameBoard, type Player } from "./constants";
+import { PlayerColor } from "./constants/enums";
 
 export const createEmptyBoard = (): GameBoard =>
   Array(ROWS)
@@ -27,4 +28,8 @@ export const checkWinner = (
 
 export const checkForDraw = (gameBoard: GameBoard) => {
   return gameBoard.every((row) => row.every((cell) => cell !== null));
+};
+
+export const getRandomPlayer = (): Player => {
+  return Math.random() < 0.5 ? PlayerColor.RED : PlayerColor.BLUE;
 };

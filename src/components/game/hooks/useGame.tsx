@@ -1,11 +1,18 @@
 import { useCallback, useMemo, useState } from "react";
 import { PlayerColor } from "../constants/enums";
 import { ROWS, type GameBoard, type Player } from "../constants";
-import { checkForDraw, checkWinner, createEmptyBoard } from "../helpers";
+import {
+  checkForDraw,
+  checkWinner,
+  createEmptyBoard,
+  getRandomPlayer,
+} from "../helpers";
 
 export const useGame = () => {
   const [board, setBoard] = useState<GameBoard>(createEmptyBoard());
-  const [currentPlayer, setCurrentPlayer] = useState<Player>("red");
+  const [currentPlayer, setCurrentPlayer] = useState<Player>(() =>
+    getRandomPlayer()
+  );
   const [winner, setWinner] = useState<Player>(null);
   const [isDraw, setIsDraw] = useState<boolean>(false);
 
@@ -50,7 +57,7 @@ export const useGame = () => {
 
   const resetGame = useCallback(() => {
     setBoard(createEmptyBoard());
-    setCurrentPlayer(PlayerColor.RED);
+    setCurrentPlayer(getRandomPlayer());
     setWinner(null);
     setIsDraw(false);
   }, []);

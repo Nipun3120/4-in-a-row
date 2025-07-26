@@ -10,7 +10,7 @@ interface PlayerTitleProps {
 const TITLE = {
   DRAW: "No one wins, restart a new game",
   WIN: "wins :)",
-  TURN: "TURN",
+  TURN: "to play",
 };
 
 export const PlayerTitle = ({
