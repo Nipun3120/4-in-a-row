@@ -12,13 +12,13 @@ export const ActionButtons = ({
   isColumnFull,
 }: ActionButtonsProps) => {
   return (
-    <div className="grid grid-cols-7 gap-2 mb-4">
+    <div className="grid grid-cols-7 gap-2 md:gap-3 mb-4 w-full">
       {Array.from({ length: COLS }, (_, col) => (
         <button
           key={col}
           onClick={() => playerTurn(col)}
           disabled={winner !== null || isColumnFull(col)}
-          className="h-12 w-16 bg-gray-800 hover:bg-gray-600 text-white font-bold cursor-pointer disabled:opacity-50 rounded-md flex items-center justify-center border border-white">
+          className="h-10 md:h-14 w-full bg-gray-800 hover:bg-gray-600 text-white font-bold cursor-pointer disabled:opacity-50 rounded-md md:rounded-lg flex items-center justify-center border border-white md:text-lg">
           {col + 1}
         </button>
       ))}

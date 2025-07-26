@@ -7,15 +7,15 @@ interface GridProps {
 
 export const Grid = ({ board }: GridProps) => {
   return (
-    <div className="grid grid-cols-7 gap-2">
+    <div className="grid grid-cols-7 gap-2 md:gap-3 w-full">
       {board.map((row, rowIndex) =>
         row.map((cell, colIndex) => (
           <div
             key={`${rowIndex}-${colIndex}`}
-            className="w-16 h-16 rounded-md bg-white border-2 border-gray-300 flex items-center justify-center">
+            className="aspect-square w-full rounded-md md:rounded-lg bg-white border border-gray-300 flex items-center justify-center p-1 md:p-2">
             {cell && (
               <div
-                className={`w-12 h-12 rounded-md ${
+                className={`w-full h-full rounded-md md:rounded-lg ${
                   cell === PlayerColor.RED ? "bg-red-600" : "bg-blue-600"
                 }`}
               />
